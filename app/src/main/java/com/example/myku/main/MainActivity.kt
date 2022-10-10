@@ -8,13 +8,27 @@ import com.example.myku.R
 import com.example.myku.ViewPagerAdapter
 import com.example.myku.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 private lateinit var binding: ActivityMainBinding
+
+private var auth : FirebaseAuth? = null
+
+lateinit var username : String
+lateinit var useremail : String
+
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = Firebase.auth
+        username = auth?.currentUser?.displayName.toString()
+        useremail = auth?.currentUser?.email.toString()
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         nav_setting()
@@ -35,6 +49,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             R.id.item_three -> {
                 // ViewPager의 현재 item에 세 번째 화면을 대입
                 binding.pager.currentItem = 2
+//                val pro = userProfileChangeRequest { displayName = "giho" }
+//                auth?.currentUser?.updateProfile(pro)
+//                Toast.makeText(this,auth?.currentUser?.displayName.toString(),Toast.LENGTH_SHORT).show()
+
                 return true
             }
             R.id.item_four -> {
@@ -49,6 +67,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     fun nav_setting(){
+
+
+
+
         // 페이저에 어댑터 연결
         binding.pager.adapter = ViewPagerAdapter(this)
 
