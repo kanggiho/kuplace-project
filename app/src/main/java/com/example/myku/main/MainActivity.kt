@@ -1,9 +1,11 @@
-package com.example.myku
+package com.example.myku.main
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.myku.R
+import com.example.myku.ViewPagerAdapter
 import com.example.myku.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

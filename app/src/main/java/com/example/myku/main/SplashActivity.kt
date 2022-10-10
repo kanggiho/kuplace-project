@@ -1,9 +1,11 @@
-package com.example.myku
+package com.example.myku.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myku.R
+import com.example.myku.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT:Long = 2000
