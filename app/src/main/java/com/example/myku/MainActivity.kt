@@ -1,8 +1,7 @@
 package com.example.myku
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myku.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityMainBinding
@@ -15,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         init()
     }
     fun init(){
-        binding.button.setOnClickListener {
-            Toast.makeText(this,"hi",Toast.LENGTH_SHORT).show()
-
-        }
+//        binding.button.setOnClickListener {
+//            Toast.makeText(this,"hi",Toast.LENGTH_SHORT).show()
+//
+//        }
     }
 }

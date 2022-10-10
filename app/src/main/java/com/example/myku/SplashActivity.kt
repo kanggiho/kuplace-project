@@ -11,10 +11,15 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
+        var a = 2
 
         Handler().postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+
+            if(a==1){
+                startActivity(Intent(this, MainActivity::class.java))
+            }else if(a==2){
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
 
             finish()
         }, SPLASH_TIME_OUT)
