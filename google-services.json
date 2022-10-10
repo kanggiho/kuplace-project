@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "499314869986",
+    "project_id": "kuplace-e2237",
+    "storage_bucket": "kuplace-e2237.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499314869986:android:924d7c2af78b0bb73440bb",
+        "android_client_info": {
+          "package_name": "com.example.myku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499314869986-q1v2rocnluk21d4q5sc2s0l3qf2l4574.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myku",
+            "certificate_hash": "cf09f3bf5488d50f90d0c7b130d84aab83528591"
+          }
+        },
+        {
+          "client_id": "499314869986-6qm5o17i0s2eh231070gt1t9dtt6p6dd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv78dxSAVEYU-DOnNlu8C5pBqFt_VI4Nc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499314869986-6qm5o17i0s2eh231070gt1t9dtt6p6dd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
