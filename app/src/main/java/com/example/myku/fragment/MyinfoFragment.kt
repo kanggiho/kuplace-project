@@ -37,12 +37,52 @@ class MyinfoFragment : Fragment() {
         v.findViewById<TextView>(R.id.infoEmail).text = useremail
         v.findViewById<TextView>(R.id.infoName).text = username
 
-        v.findViewById<Button>(R.id.logout).setOnClickListener {
+        val change_emailBtn = v.findViewById<Button>(R.id.change_emailBtn)
+        val change_passwordBtn = v.findViewById<Button>(R.id.change_passwordBtn)
+        val unregisterBtn = v.findViewById<Button>(R.id.unregisterBtn)
+        val logoutBtn = v.findViewById<Button>(R.id.logoutBtn)
+
+        change_emailBtn.setOnClickListener {
+
+        }
+        change_passwordBtn.setOnClickListener {
+
+        }
+        unregisterBtn.setOnClickListener {
+
+            val user = Firebase.auth.currentUser!!
+
+            user.delete()
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(activity, LoginActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
+                }
+
+        }
+        logoutBtn.setOnClickListener {
+
             val intent = Intent(activity, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
             auth?.signOut()
+            activity?.finish()
+
         }
+
+
+
+//        v.findViewById<Button>(R.id.logout).setOnClickListener {
+//            val intent = Intent(activity, LoginActivity::class.java)
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//            startActivity(intent)
+//            auth?.signOut()
+//        }
+
+
 
 
         return v
