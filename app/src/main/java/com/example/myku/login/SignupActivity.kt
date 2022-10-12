@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myku.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 private lateinit var binding: ActivitySignupBinding
@@ -21,16 +22,25 @@ class SignupActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.createbutton.setOnClickListener {
-            createAccount(binding.createid.text.toString(),binding.createpassword.text.toString())
+            createAccount(binding.createid.text.toString(),binding.createpassword.text.toString(),binding.createname.text.toString())
         }
+
+        binding.backbutton.setOnClickListener {
+            finish()
+        }
+
     }
 
-    private fun createAccount(email: String, password: String) {
+    private fun createAccount(email: String, password: String, name: String) {
 
-        if (email.isNotEmpty() && password.isNotEmpty()) {
+        if (email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty()) {
             auth?.createUserWithEmailAndPassword(email, password)
                 ?.addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        //성공시 이름도 추가하기
+                        val temp_name = userProfileChangeRequest { displayName = name }
+                        auth?.currentUser?.updateProfile(temp_name)
+
                         Toast.makeText(
                             this, "계정 생성 완료.",
                             Toast.LENGTH_SHORT
