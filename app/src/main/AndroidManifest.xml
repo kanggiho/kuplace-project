@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyKU">
         <activity
+            android:name=".activity.ChangePasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ChangeEmailActivity"
+            android:exported="true" />
+        <activity
             android:name=".login.SignupActivity"
             android:exported="true" />
         <activity
