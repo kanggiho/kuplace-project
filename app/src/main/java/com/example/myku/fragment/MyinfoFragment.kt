@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.myku.R
+import com.example.myku.activity.ChangeEmailActivity
+import com.example.myku.activity.ChangePasswordActivity
 import com.example.myku.login.LoginActivity
 import com.example.myku.main.useremail
 import com.example.myku.main.username
@@ -23,6 +25,7 @@ class MyinfoFragment : Fragment() {
 
     private var auth : FirebaseAuth? = null
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +34,6 @@ class MyinfoFragment : Fragment() {
 
 
         val v:View = inflater.inflate(R.layout.fragment_myinfo, container, false)
-
 
         auth = Firebase.auth
         v.findViewById<TextView>(R.id.infoEmail).text = useremail
@@ -43,10 +45,13 @@ class MyinfoFragment : Fragment() {
         val logoutBtn = v.findViewById<Button>(R.id.logoutBtn)
 
         change_emailBtn.setOnClickListener {
+            val intent = Intent(activity, ChangeEmailActivity::class.java)
+            startActivity(intent)
 
         }
         change_passwordBtn.setOnClickListener {
-
+            val intent = Intent(activity, ChangePasswordActivity::class.java)
+            startActivity(intent)
         }
         unregisterBtn.setOnClickListener {
 
@@ -87,6 +92,8 @@ class MyinfoFragment : Fragment() {
 
         return v
     }
+
+
 
 
 
