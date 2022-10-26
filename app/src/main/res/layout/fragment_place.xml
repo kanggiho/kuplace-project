@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".fragment.PlaceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="place" />
-
+    <Button
+        android:id="@+id/plusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </FrameLayout>

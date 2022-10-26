@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyKU">
         <activity
+            android:name=".activity.RatingActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.ChangePasswordActivity"
             android:exported="true" />
         <activity
