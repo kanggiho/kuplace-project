@@ -1,6 +1,7 @@
 package com.example.myku.data
 
 data class Place(
+    var uid:String? = null,
     var field:String? = null,
     var name:String? = null,
     var latitude:Float? = null,

@@ -3,6 +3,9 @@
     package="com.example.myku">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
 
     <application
         android:allowBackup="true"
@@ -10,6 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+
         android:theme="@style/Theme.MyKU">
         <activity
             android:name=".activity.RatingActivity"
@@ -38,6 +43,11 @@
         <activity
             android:name=".main.MainActivity"
             android:exported="true" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="d98f93498568cd8deb2e5a8efbc56457"
+            />
     </application>
 
 </manifest>
