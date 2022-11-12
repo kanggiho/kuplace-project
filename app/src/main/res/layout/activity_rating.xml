@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="따듯함" />
+                android:text="따뜻함" />
 
             <CheckBox
                 android:id="@+id/check2"
@@ -160,7 +160,7 @@
             android:layout_margin="10dp"
             android:textSize="16sp" />
         <EditText
-            android:id="@+id/Rating_reviewText"
+            android:id="@+id/reviewText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"

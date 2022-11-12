@@ -165,11 +165,13 @@ class RatingMapActivity : AppCompatActivity() {
 
         override fun onCalloutBalloonOfPOIItemTouched(mapView: MapView?, poiItem: MapPOIItem?, buttonType: MapPOIItem.CalloutBalloonButtonType?) {
             // 말풍선 클릭 시
-            //Toast.makeText(context,temp_x.toString()+"에다"+ temp_y.toString(),Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context,temp_x.toString()+"x y"+ temp_y.toString(),Toast.LENGTH_SHORT).show()
             //Toast.makeText(context, temp_name+"에다"+ temp_address,Toast.LENGTH_SHORT).show()
             val retInt = Intent()
             retInt.putExtra("name", temp_name)
             retInt.putExtra("address", temp_address)
+            retInt.putExtra("longitude", temp_x.toString())
+            retInt.putExtra("latitude",temp_y.toString())
             setResult(RESULT_OK,retInt)
             finish()
         }
