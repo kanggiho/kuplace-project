@@ -1,10 +1,13 @@
 package com.example.myku.fragment
-
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import com.example.myku.R
+import com.example.myku.activity.RatingActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -20,7 +23,32 @@ class PlaceFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         //Inflate the layout for this fragment
-        var v: View = inflater.inflate(com.example.myku.R.layout.fragment_place, container, false)
+        var v: View = inflater.inflate(R.layout.fragment_place, container, false)
+
+
+
+
+        v.findViewById<ImageView>(R.id.keywordImage).setOnClickListener {
+
+        }
+
+        v.findViewById<ImageView>(R.id.distanceImage).setOnClickListener {
+
+        }
+
+        v.findViewById<ImageView>(R.id.findImage).setOnClickListener {
+
+        }
+
+        v.findViewById<ImageView>(R.id.ratingImage).setOnClickListener {
+            val intent = Intent(activity, RatingActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
 //
 //
 //        auth = Firebase.auth
