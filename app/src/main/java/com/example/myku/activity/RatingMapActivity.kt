@@ -1,5 +1,7 @@
 package com.example.myku.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -10,33 +12,47 @@ import com.example.myku.KakaoAPI
 import com.example.myku.ListLayout
 import com.example.myku.adapter.ListAdapter
 import com.example.myku.data.ResultSearchKeyword
-import com.example.myku.databinding.ActivitySearchBinding
+import com.example.myku.databinding.ActivityRatingMapBinding
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
+import net.daum.mf.map.api.MapView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private lateinit var binding:ActivitySearchBinding
+private lateinit var binding:ActivityRatingMapBinding
 
-class SearchActivity : AppCompatActivity() {
+private var temp_y = 1.0
+private var temp_x = 1.0
+private var temp_name = ""
+private var temp_address = ""
+
+class RatingMapActivity : AppCompatActivity() {
     companion object{
         const val BASE_URL = "https://dapi.kakao.com/"
         const val API_KEY = "KakaoAK a9d074c41279f8a5c878da7b89ae024e"  // REST API 키
     }
+
+
 
     private val listItems = arrayListOf<ListLayout>()   // 리사이클러 뷰 아이템
     private val listAdapter = ListAdapter(listItems)    // 리사이클러 뷰 어댑터
     private var pageNumber = 1      // 검색 페이지 번호
     private var keyword = ""        // 검색 키워드
 
+    private val eventListener = MarkerEventListener(this)   // 마커 클릭 이벤트 리스너
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        binding = ActivitySearchBinding.inflate(layoutInflater)
+        binding = ActivityRatingMapBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+
+
 
         // 리사이클러 뷰
         binding.rvList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -45,6 +61,10 @@ class SearchActivity : AppCompatActivity() {
         listAdapter.setItemClickListener(object: ListAdapter.OnItemClickListener {
             override fun onClick(v: View, position: Int) {
                 val mapPoint = MapPoint.mapPointWithGeoCoord(listItems[position].y, listItems[position].x)
+                temp_y = listItems[position].y
+                temp_x = listItems[position].x
+                temp_name = listItems[position].name
+                temp_address = listItems[position].address
                 binding.mapView.setMapCenterPointAndZoomLevel(mapPoint, 1, true)
             }
         })
@@ -69,17 +89,16 @@ class SearchActivity : AppCompatActivity() {
             binding.tvPageNumber.text = pageNumber.toString()
             searchKeyword(keyword, pageNumber)
         }
-
     }
 
     // 키워드 검색 함수
     private fun searchKeyword(keyword: String, page: Int) {
         val retrofit = Retrofit.Builder()          // Retrofit 구성
-            .baseUrl(BASE_URL)
+            .baseUrl(SearchActivity.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val api = retrofit.create(KakaoAPI::class.java)            // 통신 인터페이스를 객체로 생성
-        val call = api.getSearchKeyword(API_KEY, keyword, page)    // 검색 조건 입력
+        val call = api.getSearchKeyword(SearchActivity.API_KEY, keyword, page)    // 검색 조건 입력
 
         // API 서버에 요청
         call.enqueue(object: Callback<ResultSearchKeyword> {
@@ -119,6 +138,8 @@ class SearchActivity : AppCompatActivity() {
                     markerType = MapPOIItem.MarkerType.BluePin
                     selectedMarkerType = MapPOIItem.MarkerType.RedPin
                 }
+                binding.mapView.setPOIItemEventListener(eventListener)
+
                 binding.mapView.addPOIItem(point)
             }
             listAdapter.notifyDataSetChanged()
@@ -131,4 +152,33 @@ class SearchActivity : AppCompatActivity() {
             Toast.makeText(this, "검색 결과가 없습니다", Toast.LENGTH_SHORT).show()
         }
     }
+
+    inner class MarkerEventListener(val context: Context): MapView.POIItemEventListener {
+        override fun onPOIItemSelected(mapView: MapView?, poiItem: MapPOIItem?) {
+            // 마커 클릭 시
+        }
+
+        override fun onCalloutBalloonOfPOIItemTouched(mapView: MapView?, poiItem: MapPOIItem?) {
+            // 말풍선 클릭 시 (Deprecated)
+            // 이 함수도 작동하지만 그냥 아래 있는 함수에 작성하자
+        }
+
+        override fun onCalloutBalloonOfPOIItemTouched(mapView: MapView?, poiItem: MapPOIItem?, buttonType: MapPOIItem.CalloutBalloonButtonType?) {
+            // 말풍선 클릭 시
+            //Toast.makeText(context,temp_x.toString()+"에다"+ temp_y.toString(),Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, temp_name+"에다"+ temp_address,Toast.LENGTH_SHORT).show()
+            val retInt = Intent()
+            retInt.putExtra("name", temp_name)
+            retInt.putExtra("address", temp_address)
+            setResult(RESULT_OK,retInt)
+            finish()
+        }
+
+        override fun onDraggablePOIItemMoved(mapView: MapView?, poiItem: MapPOIItem?, mapPoint: MapPoint?) {
+            // 마커의 속성 중 isDraggable = true 일 때 마커를 이동시켰을 경우
+        }
+
+
+    }
+
 }
