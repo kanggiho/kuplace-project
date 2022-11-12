@@ -8,6 +8,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.example.myku.R
 import com.example.myku.activity.RatingActivity
+import com.example.myku.activity.SearchActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -37,7 +38,8 @@ class PlaceFragment : Fragment() {
         }
 
         v.findViewById<ImageView>(R.id.findImage).setOnClickListener {
-
+            val intent = Intent(activity, SearchActivity::class.java)
+            startActivity(intent)
         }
 
         v.findViewById<ImageView>(R.id.ratingImage).setOnClickListener {
