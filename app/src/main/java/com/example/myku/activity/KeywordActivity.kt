@@ -74,6 +74,9 @@ class KeywordActivity : AppCompatActivity() {
         var ml_name = mutableListOf<String>()
         var ml_address = mutableListOf<String>()
         var ml_rate = mutableListOf<Double>()
+        var ml_lat = mutableListOf<Double>()
+        var ml_long = mutableListOf<Double>()
+
 
         binding.rvList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvList.adapter = RecyclerAdapter
@@ -84,7 +87,13 @@ class KeywordActivity : AppCompatActivity() {
                 // 클릭 시 이벤트 작성
                 //Toast.makeText(v.context,"hihi",Toast.LENGTH_SHORT).show()
 
+
+
+
                 val intent = Intent(v.context, com.example.myku.activity.MapActivity::class.java)
+                intent.putExtra("name",itemList[position].li_name)
+                intent.putExtra("lat",itemList[position].li_lat)
+                intent.putExtra("long",itemList[position].li_long)
                 startActivity(intent)
             }
         })
@@ -128,6 +137,8 @@ class KeywordActivity : AppCompatActivity() {
                             if(cnt!=0 && reco_num!=0.0){
                                 ml_name.add(document["name"].toString())
                                 ml_address.add(document["address"].toString())
+                                ml_lat.add(document["latitude"].toString().toDouble())
+                                ml_long.add(document["longitude"].toString().toDouble())
                                 ml_rate.add(reco_num)
                             }
                             //Toast.makeText(this,"추가됨", Toast.LENGTH_SHORT).show()
@@ -157,7 +168,7 @@ class KeywordActivity : AppCompatActivity() {
                 // 아이템 추가
                 for(i in 0..ml_name.size-1){
                     //Toast.makeText(this,"정상",Toast.LENGTH_SHORT).show()
-                    itemList.add(ListItem(ml_name[i], ml_address[i] ,roundDigit(ml_rate[i], 1).toString()))
+                    itemList.add(ListItem(ml_name[i], ml_address[i] ,roundDigit(ml_rate[i], 1).toString(),ml_lat[i],ml_long[i]))
                 }
 
 

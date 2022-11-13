@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myku.databinding.ActivityRatingBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -160,6 +161,8 @@ class RatingActivity : AppCompatActivity() {
             )
             firestore!!.collection("Place").document()
                 .set(content)
+
+            Toast.makeText(this,"저장되었습니다.",Toast.LENGTH_SHORT).show()
 
         }
     }

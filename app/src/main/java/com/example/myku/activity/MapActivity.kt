@@ -17,20 +17,20 @@ class MapActivity : AppCompatActivity() {
 
         mapView = binding.checkMap
 
+        val intent = intent
+
+
+
+
+        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(intent.getDoubleExtra("lat",0.0), intent.getDoubleExtra("long",0.0)), true);
 
 
         val marker = MapPOIItem()
         marker.apply {
-            itemName = "서울시청"   // 마커 이름
-            mapPoint = MapPoint.mapPointWithGeoCoord(37.5666805, 126.9784147)   // 좌표
+            itemName = intent.getStringExtra("name")   // 마커 이름
+            mapPoint = MapPoint.mapPointWithGeoCoord(intent.getDoubleExtra("lat",0.0), intent.getDoubleExtra("long",0.0))   // 좌표
             markerType = MapPOIItem.MarkerType.BluePin
             selectedMarkerType = MapPOIItem.MarkerType.RedPin
-            //markerType = MapPOIItem.MarkerType.CustomImage          // 마커 모양 (커스텀)
-            //customImageResourceId = R.drawable.이미지               // 커스텀 마커 이미지
-            //selectedMarkerType = MapPOIItem.MarkerType.CustomImage  // 클릭 시 마커 모양 (커스텀)
-            //customSelectedImageResourceId = R.drawable.이미지       // 클릭 시 커스텀 마커 이미지
-            //isCustomImageAutoscale = false      // 커스텀 마커 이미지 크기 자동 조정
-            //setCustomImageAnchor(0.5f, 1.0f)    // 마커 이미지 기준점
         }
         mapView.addPOIItem(marker)
 
