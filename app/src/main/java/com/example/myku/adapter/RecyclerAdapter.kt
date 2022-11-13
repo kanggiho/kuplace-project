@@ -25,7 +25,7 @@ class RecyclerAdapter(val itemList: ArrayList<ListItem>): RecyclerView.Adapter<R
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
         holder.name.text = itemList[position].li_name
         holder.address.text = itemList[position].li_address
-        holder.rate.text = itemList[position].li_rate
+        holder.rate.text = "추천도 : "+itemList[position].li_rate
 
         holder.itemView.setOnClickListener {
             itemClickListener.onClick(it, position)
