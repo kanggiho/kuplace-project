@@ -47,8 +47,8 @@
 
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/imageButton"
+        <ImageView
+            android:id="@+id/gomapImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3"
