@@ -80,14 +80,14 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/place1" />
+                        app:srcCompat="@drawable/search1" />
 
                     <TextView
                         android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="거리별 장소추천"
+                        android:text="등록된 장소검색"
                         android:textSize="18sp" />
                 </LinearLayout>
             </TableRow>
@@ -113,14 +113,14 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="5dp"
-                        app:srcCompat="@drawable/search1" />
+                        app:srcCompat="@drawable/place1" />
 
                     <TextView
                         android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="장소 검색"
+                        android:text="지도내 장소검색"
                         android:textSize="18sp" />
                 </LinearLayout>
 

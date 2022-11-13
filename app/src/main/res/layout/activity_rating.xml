@@ -38,6 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="클릭해주세요"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -47,6 +49,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="주소가 입력됩니다."
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textSize="14sp"/>
 
         </LinearLayout>

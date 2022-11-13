@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.example.myku.R
+import com.example.myku.activity.AllActivity
 import com.example.myku.activity.KeywordActivity
 import com.example.myku.activity.RatingActivity
 import com.example.myku.activity.SearchActivity
@@ -36,7 +37,8 @@ class PlaceFragment : Fragment() {
         }
 
         v.findViewById<ImageView>(R.id.distanceImage).setOnClickListener {
-
+            val intent = Intent(activity, AllActivity::class.java)
+            startActivity(intent)
         }
 
         v.findViewById<ImageView>(R.id.findImage).setOnClickListener {
