@@ -93,6 +93,8 @@ class RatingActivity : AppCompatActivity() {
 //        mapViewContainer.addView(mapView)
 
         binding.ratingBtn.setOnClickListener {
+            rt_key1 = "key1"
+            rt_key2 = "key2"
 
 
 

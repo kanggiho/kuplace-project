@@ -60,20 +60,24 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/cafeText1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="할리스"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/cafeText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="거리 100m / 평점 4.8"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
                         android:textSize="14sp"/>
 
                 </LinearLayout>
@@ -120,20 +124,24 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/restaurantText"
+                        android:id="@+id/restaurantText1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="우리식당"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/restaurantInfo"
+                        android:id="@+id/restaurantText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="거리 100m / 평점 4.8"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
                         android:textSize="14sp"/>
 
                 </LinearLayout>
@@ -181,20 +189,24 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/studyText"
+                        android:id="@+id/studyText1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="스페이스"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/studyInfo"
+                        android:id="@+id/studyText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="거리 100m / 평점 4.8"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
                         android:textSize="14sp"/>
 
                 </LinearLayout>

@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/drawable/bg_spinner.xml" value="0.5697916666666667" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/drawable/border_layout.xml" value="0.34427083333333336" />
+        <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/drawable/grad_btn.xml" value="0.5697916666666667" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/activity_change_email.xml" value="0.3183876811594203" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/activity_change_password.xml" value="0.5385416666666667" />
+        <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/activity_keyword.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/activity_login.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/activity_rating.xml" value="0.33" />
@@ -17,6 +20,7 @@
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/fragment_home.xml" value="0.3302083333333333" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/fragment_myinfo.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/fragment_place.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/list_item.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/layout/list_layout.xml" value="0.553125" />
         <entry key="..\:/Users/GIHO/Desktop/kuplace/app/src/main/res/menu/bottom_navigation_item.xml" value="0.3302083333333333" />
       </map>

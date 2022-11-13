@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MyKU"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.KeywordActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.RatingMapActivity"
             android:exported="true" />
         <activity
