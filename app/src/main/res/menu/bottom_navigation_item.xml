@@ -9,10 +9,10 @@
         android:title="장소추천"
         android:icon="@drawable/place"/>
     <item android:id="@+id/item_three"
-        android:title="이벤트"
-        android:icon="@drawable/event"/>
-    <item android:id="@+id/item_four"
         android:title="내정보"
         android:icon="@drawable/info"/>
+<!--    <item android:id="@+id/item_four"-->
+<!--        android:title="내정보"-->
+<!--        android:icon="@drawable/info"/>-->
 
 </menu>

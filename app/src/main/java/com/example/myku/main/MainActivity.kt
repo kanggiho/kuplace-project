@@ -69,18 +69,18 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             }
             com.example.myku.R.id.item_three -> {
                 // ViewPager의 현재 item에 세 번째 화면을 대입
-                binding.pager.currentItem = 2
+                binding.pager.currentItem = 3
 //                val pro = userProfileChangeRequest { displayName = "giho" }
 //                auth?.currentUser?.updateProfile(pro)
 //                Toast.makeText(this,auth?.currentUser?.displayName.toString(),Toast.LENGTH_SHORT).show()
 
                 return true
             }
-            com.example.myku.R.id.item_four -> {
-                // ViewPager의 현재 item에 세 번째 화면을 대입
-                binding.pager.currentItem = 3
-                return true
-            }
+//            com.example.myku.R.id.item_four -> {
+//                // ViewPager의 현재 item에 세 번째 화면을 대입
+//                binding.pager.currentItem = 3
+//                return true
+//            }
             else -> {
                 return false
             }

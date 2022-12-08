@@ -113,6 +113,8 @@ class AllActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 adapter.getFilter().filter(s)
+
+
             }
 
         })
@@ -142,6 +144,7 @@ class AllActivity : AppCompatActivity() {
                     .get()     // 문서 가져오기
                     .addOnSuccessListener { result ->
                         for(document in result){
+
                             if(adapter.getItem(position)!!.toString()==document["name"].toString()){
                                 binding.allplaceText.setText(document["name"].toString())
                                 binding.alladdressText.setText("주소 : " + document["address"].toString())
